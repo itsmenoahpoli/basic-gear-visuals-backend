@@ -9,5 +9,5 @@ class Lecture extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 }

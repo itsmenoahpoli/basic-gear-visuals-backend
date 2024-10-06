@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('subject_id')->constrained('subjects')->cascadeOnDelete();
+            $table->string('title')->unique();
+            $table->string('title_slug')->unqiue();
+            $table->text('description');
             $table->timestamps();
         });
     }
