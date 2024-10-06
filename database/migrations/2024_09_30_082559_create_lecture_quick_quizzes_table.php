@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('lecture_quick_quizzes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('lecture_id')->constrained('lectures')->cascadeOnDelete();
+            $table->string('title')->unique();
+            $table->string('title_slug')->unique();
+            $table->text('questions');
+            $table->enum('status', ['published', 'draft'])->default('draft');
             $table->timestamps();
         });
     }

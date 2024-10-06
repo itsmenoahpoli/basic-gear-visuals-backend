@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('lecture_exams', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('name');
+            $table->string('name_slug');
+            $table->enum('status', ['published', 'draft'])->default('draft');
             $table->timestamps();
         });
     }
