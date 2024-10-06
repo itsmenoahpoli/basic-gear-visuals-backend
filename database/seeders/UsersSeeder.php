@@ -19,6 +19,7 @@ class UsersSeeder extends Seeder
         foreach ($roles as $role)
         {
             $index += 1;
+
             User::query()->create([
                 'account_no'    => $role.$index,
                 'name'          => $role.' account',
