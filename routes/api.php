@@ -16,10 +16,8 @@ Route::prefix('v1')->group(function () {
         });
     });
 
-    Route::prefix('resources')->group(function() {
-        Route::apiResource('subjects', SubjectsController::class);
-        Route::apiResource('sections', SectionsController::class);
-    });
+    Route::apiResource('subjects', SubjectsController::class);
+    Route::apiResource('sections', SectionsController::class);
 });
 
 

@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('name')->unique();
-            $table->string('name_slug')->unique();
+            $table->string('title')->unique();
+            $table->string('title_slug')->unique();
             $table->enum('status', ['published', 'draft'])->default('draft');
             $table->timestamps();
         });

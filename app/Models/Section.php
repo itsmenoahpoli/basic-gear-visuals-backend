@@ -11,9 +11,4 @@ class Section extends Model
     use HasFactory;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
-
-    public function teacher() : BelongsTo
-    {
-        return $this->belongsTo(User::class, 'teacher_id');
-    }
 }

@@ -15,7 +15,7 @@ class SectionsRepository extends BaseRepository
 
     public function create($data)
     {
-        $data['name_slug'] = Str::slug($data['name']);
+        $data['title_slug'] = Str::slug($data['title']);
 
         return parent::create($data);
     }
