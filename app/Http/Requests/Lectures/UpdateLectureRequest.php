@@ -11,7 +11,7 @@ class UpdateLectureRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdateLectureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'subject_id'    => 'required|int',
+            'title'         => 'required|string',
+            'description'   => 'required|string'
         ];
     }
 }

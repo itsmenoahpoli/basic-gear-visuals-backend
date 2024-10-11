@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\AuthController;
 
 use App\Http\Controllers\Api\SubjectsController;
 use App\Http\Controllers\Api\SectionsController;
+use App\Http\Controllers\Api\LecturesController;
 
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
@@ -18,6 +19,7 @@ Route::prefix('v1')->group(function () {
 
     Route::apiResource('subjects', SubjectsController::class);
     Route::apiResource('sections', SectionsController::class);
+    Route::apiResource('lectures', LecturesController::class);
 });
 
 

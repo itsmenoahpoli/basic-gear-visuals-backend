@@ -9,7 +9,7 @@ use App\Services\LecturesService;
 use App\Http\Requests\Lectures\CreateLectureRequest;
 use App\Http\Requests\Lectures\UpdateLectureRequest;
 
-class SubjectsController extends Controller
+class LecturesController extends Controller
 {
     public function __construct(
         private readonly LecturesService $service
