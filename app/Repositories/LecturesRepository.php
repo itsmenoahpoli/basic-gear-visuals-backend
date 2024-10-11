@@ -6,7 +6,7 @@ use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class SubjectsRepository extends BaseRepository
+class LecturesRepository extends BaseRepository
 {
     public function __construct(Model $model, array $relationships, array $relationshipsInList)
     {
@@ -15,7 +15,7 @@ class SubjectsRepository extends BaseRepository
 
     public function create($data)
     {
-        $data['name_slug'] = Str::slug($data['name']);
+        $data['title_slug'] = Str::slug($data['title']);
 
         return parent::create($data);
     }

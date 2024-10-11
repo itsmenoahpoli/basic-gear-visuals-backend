@@ -6,7 +6,7 @@ use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class SubjectsRepository extends BaseRepository
+class SectionsRepository extends BaseRepository
 {
     public function __construct(Model $model, array $relationships, array $relationshipsInList)
     {

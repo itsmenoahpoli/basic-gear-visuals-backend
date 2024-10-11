@@ -3,17 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use App\Services\SubjectsService;
-use App\Http\Requests\Subjects\CreateSubjectRequest;
-use App\Http\Requests\Subjects\UpdateSubjectRequest;
+use App\Services\LecturesService;
+use App\Http\Requests\Lectures\CreateLectureRequest;
+use App\Http\Requests\Lectures\UpdateLectureRequest;
 
 class SubjectsController extends Controller
 {
     public function __construct(
-        private readonly SubjectsService $service
+        private readonly LecturesService $service
     )
     {}
 
@@ -30,7 +29,7 @@ class SubjectsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateSubjectRequest $request) : JsonResponse
+    public function store(CreateLectureRequest $request) : JsonResponse
     {
         $result = $this->service->create($request->validated());
 
@@ -50,7 +49,7 @@ class SubjectsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubjectRequest $request, string $id) : JsonResponse
+    public function update(UpdateLectureRequest $request, string $id) : JsonResponse
     {
         $result = $this->service->updateById($id, $request->validated());
 
