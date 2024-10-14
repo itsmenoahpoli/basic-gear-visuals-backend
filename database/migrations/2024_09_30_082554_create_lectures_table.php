@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title')->unique();
             $table->string('title_slug')->unqiue();
             $table->text('description');
+            $table->text('module_src')->nullable();
             $table->timestamps();
         });
     }
