@@ -25,7 +25,7 @@ class LecturesService extends LecturesRepository
             $fileName = $payload['file']->getClientOriginalName();
             $payload['file']->move($destinationPath, $fileName);
 
-            $payload['module_src'] = 'uploads/modules/' . $fileName;
+            $payload['module_src'] = 'public/uploads/modules/' . $fileName;
         }
 
         unset($payload['file']);
