@@ -23,7 +23,8 @@ class UpdateLectureRequest extends FormRequest
     {
         return [
             'title'         => 'required|string',
-            'description'   => 'required|string'
+            'description'   => 'required|string',
+            'questions'     => 'nullable|string'
         ];
     }
 }

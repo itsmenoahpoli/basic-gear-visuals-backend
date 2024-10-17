@@ -25,7 +25,8 @@ class CreateLectureRequest extends FormRequest
             'subject_id'    => 'required|int',
             'title'         => 'required|string',
             'description'   => 'required|string',
-            'file'          => 'nullable|file'
+            'file'          => 'nullable|file',
+            'questions'     => 'nullable|string'
         ];
     }
 }
