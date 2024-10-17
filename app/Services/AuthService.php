@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 use App\Models\User;
@@ -34,7 +35,7 @@ class AuthService
 
     public function createAccount($data)
     {
-        $user = User::query()->find('email', $data['email'])->first();
+        $user = User::query()->where('email', $data['email'])->first();
 
         if ($user)
         {
@@ -42,9 +43,11 @@ class AuthService
         }
 
         $createUser = User::query()->create([
-            'name'      => $data['name'],
-            'email'     => $data['email'],
-            'password'  => bcrypt($data['password'])
+            'account_no'    => strtoupper(Str::random(15)),
+            'account_type'  => $data['account_type'],
+            'name'          => $data['name'],
+            'email'         => $data['email'],
+            'password'      => bcrypt($data['password'])
         ]);
 
         return $createUser;

@@ -22,9 +22,10 @@ class CreateAccountRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email'     => 'email|required',
-            'name'      => 'string|required',
-            'password'  => 'string|required',
+            'account_type'  => 'string|required',
+            'email'         => 'email|required',
+            'name'          => 'string|required',
+            'password'      => 'string|required',
         ];
     }
 }
