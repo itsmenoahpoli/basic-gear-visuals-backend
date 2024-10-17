@@ -23,7 +23,7 @@ class UsersSeeder extends Seeder
             User::query()->create([
                 'account_no'    => $role.$index,
                 'name'          => $role.' account',
-                'email'         => $role.'@basicgearvisuals.com',
+                'email'         => $role.'@bgvlabs.com',
                 'password'      => bcrypt($role.'password$$'),
                 'account_type'  => $role
             ]);
