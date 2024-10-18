@@ -14,7 +14,7 @@ class SubjectsSeeder extends Seeder
      */
     public function run(): void
     {
-        $subjects = ['Subject 1', 'Subject 2', 'Subject 3', 'Subject 4'];
+        $subjects = ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'];
 
         foreach ($subjects as $subject)
         {
