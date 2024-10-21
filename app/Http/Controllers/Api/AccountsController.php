@@ -18,9 +18,10 @@ class AccountsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() : JsonResponse
+    public function index(Request $request) : JsonResponse
     {
-        $result = $this->accountsService->getList();
+        $accountType = $request->get('accountType');
+        $result = $accountType ? $this->accountsService->getListByUserType($accountType) : $this->accountsService->getList();
 
         return response()->json($result, Response::HTTP_OK);
     }
