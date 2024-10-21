@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use App\Services\LecturesService;
-use App\Http\Requests\Lectures\CreateLectureRequest;
-use App\Http\Requests\Lectures\UpdateLectureRequest;
+use App\Http\Requests\Laboratories\CreateLabRequest;
+use App\Http\Requests\Laboratories\UpdateLabRequest;
 
 class LecturesController extends Controller
 {
@@ -29,7 +29,7 @@ class LecturesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateLectureRequest $request) : JsonResponse
+    public function store(CreateLabRequest $request) : JsonResponse
     {
         $result = $this->service->create($request->validated());
 
@@ -49,7 +49,7 @@ class LecturesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLectureRequest $request, string $id) : JsonResponse
+    public function update(UpdateLabRequest $request, string $id) : JsonResponse
     {
         $result = $this->service->updateById($id, $request->validated());
 

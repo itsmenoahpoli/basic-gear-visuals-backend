@@ -11,8 +11,8 @@ class AccountsRepository extends BaseRepository
 {
     public function __construct(
         Model $model,
-        readonly array $relationships,
-        readonly array $showRelationshipsInList
+        array $relationships,
+        array $showRelationshipsInList
     )
     {
         parent::__construct($model, $relationships, $showRelationshipsInList);

@@ -7,9 +7,7 @@ use App\Repositories\AccountsRepository;
 
 class AccountsService extends AccountsRepository
 {
-    public function __construct(
-        readonly User $model
-    )
+    public function __construct(User $model)
     {
         parent::__construct($model, ['user_role', 'user_otps', 'user_sessions'], ['user_role']);
     }

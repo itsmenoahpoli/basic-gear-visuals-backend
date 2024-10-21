@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('subject_id')->nullable()->constrained('subjects')->cascadeOnDelete();
+            $table->string('week_no');
             $table->string('title')->unique();
             $table->string('title_slug')->unqiue();
             $table->text('description');
             $table->text('module_src')->nullable();
             $table->longText('questions')->nullable();
+            $table->longText('labs')->nullable();
             $table->timestamps();
         });
     }
