@@ -42,9 +42,13 @@ class LecturesService extends LecturesRepository
 
             $path = 'public/uploads/modules/' . $fileName;
 
-            return $this->model->query()->find($id)->update([
+            $this->model->query()->find($id)->update([
                 'module_src' => $path
             ]);
+
+            return $path;
         }
+
+        return 'not updated';
     }
 }

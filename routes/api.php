@@ -26,7 +26,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('lectures', LecturesController::class);
     Route::apiResource('lecture-exams', LectureExamsController::class);
 
-    Route::patch('lecture-update-module/{id}', [LecturesController::class, 'updateModule']);
+    Route::post('lecture-update-module/{id}', [LecturesController::class, 'updateModule']);
 });
 
 

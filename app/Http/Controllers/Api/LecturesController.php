@@ -67,7 +67,10 @@ class LecturesController extends Controller
         return response()->json($result, Response::HTTP_NO_CONTENT);
     }
 
-    public function updateModule(Request $request, $id) : JsonResponse
+    /**
+     * Update existing record module file.
+     */
+    public function updateModule(Request $request, $id)
     {
         $result = $this->service->updateModule($request->file('module'), $id);
 
