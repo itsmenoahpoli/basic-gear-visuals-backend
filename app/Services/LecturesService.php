@@ -14,12 +14,6 @@ class LecturesService extends LecturesRepository
 
     public function create($payload)
     {
-
-        // if ($payload['file'] && $payload['file']->isValid()) {
-        //     $path = $payload['file']->store('uploads/modules', 'public');
-        //     $payload['module_src'] = $path;
-        // }
-
         if ($payload['file'] && $payload['file']->isValid()) {
             $destinationPath = public_path('uploads/modules');
             $fileName = $payload['file']->getClientOriginalName();

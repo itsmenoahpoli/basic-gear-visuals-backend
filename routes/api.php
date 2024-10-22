@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\SubjectsController;
 use App\Http\Controllers\Api\SectionsController;
 use App\Http\Controllers\Api\LecturesController;
 use App\Http\Controllers\Api\LectureExamsController;
+use App\Http\Controllers\Api\LaboratorySubmissionsController;
 
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
@@ -25,8 +26,8 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('sections', SectionsController::class);
     Route::apiResource('lectures', LecturesController::class);
     Route::apiResource('lecture-exams', LectureExamsController::class);
-
     Route::post('lecture-update-module/{id}', [LecturesController::class, 'updateModule']);
+    Route::post('lab-submit', [LaboratorySubmissionsController::class, 'submit']);
 });
 
 

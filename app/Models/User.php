@@ -29,4 +29,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Section::class);
     }
+
+    public function my_laboratories() : HasMany
+    {
+        return $this->hasMany(\App\Models\LaboratorySubmission::class);
+    }
 }
