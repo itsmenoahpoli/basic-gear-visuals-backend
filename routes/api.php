@@ -20,7 +20,7 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::apiResource('accounts', AccountsController::class);
-    Route::get('accounts-filtered/{type}', [AccountsController::class, 'indexFiltered']);
+    Route::get('accounts-filtered/{type}', [AccountsController::class, 'index']);
     Route::apiResource('subjects', SubjectsController::class);
     Route::apiResource('sections', SectionsController::class);
     Route::apiResource('lectures', LecturesController::class);
