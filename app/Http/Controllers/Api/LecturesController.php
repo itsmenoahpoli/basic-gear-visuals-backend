@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use App\Services\LecturesService;
@@ -64,5 +65,12 @@ class LecturesController extends Controller
         $result = $this->service->deleteById($id);
 
         return response()->json($result, Response::HTTP_NO_CONTENT);
+    }
+
+    public function updateModule(Request $request, $id) : JsonResponse
+    {
+        $result = $this->service->updateModule($request->file('module'), $id);
+
+        return response()->json($result, Response::HTTP_OK);
     }
 }
