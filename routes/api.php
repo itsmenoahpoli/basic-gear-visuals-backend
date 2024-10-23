@@ -28,6 +28,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('lecture-exams', LectureExamsController::class);
     Route::post('lecture-update-module/{id}', [LecturesController::class, 'updateModule']);
     Route::post('lab-submit', [LaboratorySubmissionsController::class, 'submit']);
+    Route::get('my-laboratories/{userId}', [LaboratorySubmissionsController::class, 'myLabs']);
 });
 
 

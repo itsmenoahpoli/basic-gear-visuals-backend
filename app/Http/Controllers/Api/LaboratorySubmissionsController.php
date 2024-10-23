@@ -19,4 +19,11 @@ class LaboratorySubmissionsController extends Controller
 
         return response()->json($result, 201);
     }
+
+    public function myLabs($userId)
+    {
+        $result = $this->service->myLaboratories($userId);
+
+        return response()->json($result, 200);
+    }
 }

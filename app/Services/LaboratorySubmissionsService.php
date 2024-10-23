@@ -33,4 +33,9 @@ class LaboratorySubmissionsService extends LaboratorySubmissionsRepository
             ]);
         }
     }
+
+    public function myLaboratories($userId)
+    {
+        return $this->model->query()->where('user_id', $userId)->get();
+    }
 }
