@@ -57,6 +57,8 @@ class AccountsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $result = $this->accountsService->deleteById($id);
+
+        return response()->json($result, 204);
     }
 }
