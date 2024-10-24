@@ -19,6 +19,6 @@ class LaboratorySubmission extends Model
 
     public function student() : BelongsTo
     {
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
     }
 }

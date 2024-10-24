@@ -8,7 +8,6 @@ use App\Http\Controllers\Api\SectionsController;
 use App\Http\Controllers\Api\LecturesController;
 use App\Http\Controllers\Api\LectureExamsController;
 use App\Http\Controllers\Api\LaboratorySubmissionsController;
-use App\Models\LaboratorySubmission;
 
 Route::prefix('v1')->group(function () {
     Route::prefix('auth')->group(function () {
@@ -31,7 +30,7 @@ Route::prefix('v1')->group(function () {
     Route::post('lab-submit', [LaboratorySubmissionsController::class, 'submit']);
     Route::get('my-laboratories/{userId}', [LaboratorySubmissionsController::class, 'myLabs']);
     Route::get('get-teacher-laboratories/{teacherId}', [LecturesController::class, 'getListByTeacher']);
-    Route::get('get-laboratory-submissions/{laboratoryId}', [LaboratorySubmission::class, 'getSubmissionByLab']);
+    Route::get('get-laboratory-submissions/{laboratoryId}', [LaboratorySubmissionsController::class, 'getSubmissionByLab']);
 });
 
 

@@ -14,7 +14,7 @@ class LaboratorySubmissionsService extends LaboratorySubmissionsRepository
 
     public function getSubmissionsByLab($laboratoryId)
     {
-        return $this->model->query()->where('lecture_id', $laboratoryId)->get();
+        return $this->model->query()->with(['lecture', 'student'])->where('lecture_id', $laboratoryId)->get();
     }
 
     public function submitLaboratory($payload)
