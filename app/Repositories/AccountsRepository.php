@@ -30,4 +30,13 @@ class AccountsRepository extends BaseRepository
 
         return parent::create($data);
     }
+
+    public function updateByIdupdateById($id, $data)
+    {
+        if ($data['password']) {
+            $data['password'] = bcrypt($data['password']);
+        }
+
+        return parent::updateById($id, $data);
+    }
 }

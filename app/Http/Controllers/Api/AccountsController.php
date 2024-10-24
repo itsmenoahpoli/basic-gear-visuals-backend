@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use App\Services\AccountsService;
 use App\Http\Requests\Accounts\CreateAccountRequest;
+use App\Http\Requests\Accounts\UpdateAccountRequest;
 
 class AccountsController extends Controller
 {
@@ -47,9 +48,11 @@ class AccountsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateAccountRequest $request, string $id)
     {
-        //
+        $result = $this->accountsService->updateById($id, $request->validated());
+
+        return response()->json($result, 200);
     }
 
     /**
