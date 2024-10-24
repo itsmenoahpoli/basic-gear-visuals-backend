@@ -13,6 +13,13 @@ class LaboratorySubmissionsController extends Controller
     )
     {}
 
+    public function getSubmissionByLab($laboratoryId)
+    {
+        $result = $this->service->getSubmissionsByLab($laboratoryId);
+
+        return response()->json($result, 200);
+    }
+
     public function submit(Request $request)
     {
         $result = $this->service->submitLaboratory($request->all());

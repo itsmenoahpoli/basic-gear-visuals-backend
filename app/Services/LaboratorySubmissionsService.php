@@ -12,6 +12,11 @@ class LaboratorySubmissionsService extends LaboratorySubmissionsRepository
         parent::__construct($model, [], []);
     }
 
+    public function getSubmissionsByLab($laboratoryId)
+    {
+        return $this->model->query()->where('lecture_id', $laboratoryId)->get();
+    }
+
     public function submitLaboratory($payload)
     {
         if (count($payload['files']))
