@@ -26,7 +26,7 @@ class LaboratorySubmissionsService extends LaboratorySubmissionsRepository
             foreach ($payload['files'] as $file) {
                 $filename = $file->getClientOriginalName();
                 $file->move(public_path('uploads/laboratory-submissions'), $filename);
-                $uploadedFiles[] = '/uploads/laboratory-submissions/'.$filename;
+                $uploadedFiles[] = 'public/uploads/laboratory-submissions/'.$filename;
             }
 
 
