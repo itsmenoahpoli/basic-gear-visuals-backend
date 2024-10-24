@@ -20,7 +20,7 @@ class AccountsRepository extends BaseRepository
 
     public function getListByUserType($accountType)
     {
-        return $this->model->query()->where('account_type', $accountType)->get();
+        return $this->model->query()->where('account_type', $accountType)->orderBy('created_at', 'desc')->get();
     }
 
     public function create($data)

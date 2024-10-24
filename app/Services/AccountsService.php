@@ -11,4 +11,11 @@ class AccountsService extends AccountsRepository
     {
         parent::__construct($model, [], []);
     }
+
+    public function create($payload)
+    {
+        $payload['password'] = bcrypt($payload['password']);
+
+        return parent::create($payload);
+    }
 }

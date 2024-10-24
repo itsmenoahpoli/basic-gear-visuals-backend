@@ -11,7 +11,7 @@ class CreateAccountRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class CreateAccountRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'account_type' => 'string|required',
+            'name' => 'string|required',
+            'email' => 'email|required',
+            'password' => 'string|required'
         ];
     }
 }
