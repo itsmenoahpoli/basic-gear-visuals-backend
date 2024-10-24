@@ -12,6 +12,11 @@ class LecturesService extends LecturesRepository
         parent::__construct($model, [], []);
     }
 
+    public function getListByTeacher($teacherId)
+    {
+        return $this->model->query()->where('user_id', $teacherId)->get();
+    }
+
     public function create($payload)
     {
         if ($payload['file'] && $payload['file']->isValid()) {

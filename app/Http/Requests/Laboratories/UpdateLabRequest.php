@@ -22,10 +22,11 @@ class UpdateLabRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'user_id'       => 'required|int',
             'week_no'       => 'required|int',
             'title'         => 'required|string',
             'description'   => 'required|string',
-            'file'           => 'nullable|file',
+            'file'          => 'nullable|file',
             'questions'     => 'nullable|string',
             'labs'          => 'nullable|string',
         ];

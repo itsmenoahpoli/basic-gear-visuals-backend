@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->string('week_no');
             $table->string('title')->unique();
             $table->string('title_slug')->unqiue();

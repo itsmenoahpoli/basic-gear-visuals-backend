@@ -17,6 +17,13 @@ class LecturesController extends Controller
     )
     {}
 
+    public function getListByTeacher($teacherId)
+    {
+        $result = $this->service->getListByTeacher($teacherId);
+
+        return response()->json($result, Response::HTTP_OK);
+    }
+
     /**
      * Display a listing of the resource.
      */

@@ -13,9 +13,9 @@ class Lecture extends Model
 
     protected $guarded = [];
 
-    public function subject() : BelongsTo
+    public function teacher() : BelongsTo
     {
-        return $this->belongsTo(\App\Models\Subject::class);
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
     }
 
     public function lecture_exams() : HasMany

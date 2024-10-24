@@ -22,7 +22,7 @@ class CreateLectureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'subject_id'    => 'required|int',
+            'user_id'       => 'required|int',
             'title'         => 'required|string',
             'description'   => 'required|string',
             'file'          => 'nullable|file',
