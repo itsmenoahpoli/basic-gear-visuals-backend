@@ -26,9 +26,11 @@ class CreateLabRequest extends FormRequest
             'week_no'       => 'required|int',
             'title'         => 'required|string',
             'description'   => 'required|string',
+            'objective'     => 'required|string',
             'file'          => 'nullable|file',
             'questions'     => 'nullable|string',
             'labs'          => 'nullable|string',
+            'instruction'   => 'required|string'
         ];
     }
 }
