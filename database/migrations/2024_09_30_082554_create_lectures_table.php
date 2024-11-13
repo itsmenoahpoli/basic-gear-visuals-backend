@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('title_slug')->unqiue();
             $table->text('description');
             $table->longtext('objective')->nullable();
+            $table->longtext('instruction')->nullable();
             $table->text('module_src')->nullable();
             $table->longText('questions')->nullable();
             $table->longText('labs')->nullable();
-            $table->longtext('instruction')->nullable();
             $table->timestamps();
         });
     }

@@ -24,7 +24,9 @@ class UpdateLectureRequest extends FormRequest
         return [
             'title'         => 'required|string',
             'description'   => 'required|string',
-            'questions'     => 'nullable|string'
+            'objective'     => 'required|string',
+            'instruction'   => 'required|string',
+            'questions'     => 'nullable|string',
         ];
     }
 }
